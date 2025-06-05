@@ -14,7 +14,13 @@
   </mat-form-field>
 
   <span>
-    <button mat-raised-button>Cerca</button>
-    <button mat-raised-button>Salva</button>
+    <button mat-raised-button>
+      Cerca
+      <mat-icon>search</mat-icon>
+    </button>
+    <button mat-raised-button (click)="setFavoriteCards()">
+      Salva
+      <mat-icon>star</mat-icon>
+    </button>
   </span>
 </form>

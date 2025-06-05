@@ -2,7 +2,8 @@ import {Component, DestroyRef, inject} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
 import {debounceTime} from 'rxjs';
-import {ScryfallService} from '../../../providers/services/scryfall-service';
+import {ScryfallService} from '../../../providers/services/scryfall.service';
+import {StoreService} from '../../../providers/services/store.service';
 
 @Component({
   selector: 'app-search-page',
@@ -13,6 +14,7 @@ import {ScryfallService} from '../../../providers/services/scryfall-service';
 export class SearchPage {
 
   readonly #scryfallService = inject(ScryfallService);
+  readonly #storeService = inject(StoreService);
   readonly #destroyRef = inject(DestroyRef);
 
   constructor() {
@@ -39,4 +41,9 @@ export class SearchPage {
   });
 
   results: Array<string> = [];
+
+  setFavoriteCards() {
+    let card = this.form.getRawValue()['search'];
+    this.#storeService.addFavoriteCard(card);
+  }
 }
