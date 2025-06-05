@@ -1,0 +1,7 @@
+.cardCard {
+  margin: 2rem 0.5rem;
+
+  mat-card {
+    padding-bottom: 1rem;
+  }
+}

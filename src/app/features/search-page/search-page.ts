@@ -4,6 +4,7 @@ import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
 import {debounceTime} from 'rxjs';
 import {ScryfallService} from '../../../providers/services/scryfall.service';
 import {StoreService} from '../../../providers/services/store.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-search-page',
@@ -16,6 +17,7 @@ export class SearchPage {
   readonly #scryfallService = inject(ScryfallService);
   readonly #storeService = inject(StoreService);
   readonly #destroyRef = inject(DestroyRef);
+  readonly #router = inject(Router);
 
   constructor() {
     this.form.get('search')?.valueChanges
@@ -42,8 +44,17 @@ export class SearchPage {
 
   results: Array<string> = [];
 
-  setFavoriteCards() {
+  get isInvalid(): boolean {
+    return !this.form.getRawValue()['search'];
+  }
+
+  setFavoriteCards(): void {
     let card = this.form.getRawValue()['search'];
     this.#storeService.addFavoriteCard(card);
+  }
+
+  searchCard(): void{
+    let card = this.form.getRawValue()['search'];
+    this.#router.navigate(['/cards', card]);
   }
 }

@@ -1,0 +1,11 @@
+@let elementSize = cards.length;
+@if(elementSize){
+<span>Sono stati trovati {{elementSize}} elementi</span>
+}@else{
+  <span>Non sono stati trovati elementi per la carta selezionata</span>
+}
+@for (card of cards; track card.id){
+<div>
+  <app-card-deatil [card]="card"/>
+</div>
+}
