@@ -1,0 +1,20 @@
+<form [formGroup]="form" class="searchForm">
+  <mat-form-field>
+    <mat-label>Nome carta</mat-label>
+    <input type="text"
+           placeholder="Cerca..."
+           matInput
+           formControlName="search"
+           [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete">
+      @for (res of results; track res) {
+        <mat-option [value]="res">{{res}}</mat-option>
+      }
+    </mat-autocomplete>
+  </mat-form-field>
+
+  <span>
+    <button mat-raised-button>Cerca</button>
+    <button mat-raised-button>Salva</button>
+  </span>
+</form>

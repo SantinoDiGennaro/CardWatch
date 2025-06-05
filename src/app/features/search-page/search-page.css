@@ -1,0 +1,12 @@
+.searchForm {
+  display: flex;
+  flex-direction: column;
+
+  span {
+    display: flex;
+    justify-content: space-between;
+    button {
+      width: 40%;
+    }
+  }
+}
