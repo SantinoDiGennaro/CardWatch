@@ -1,0 +1,10 @@
+.pagination-controls {
+  padding-block: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background-color: whitesmoke;
+  position: sticky;
+  bottom: 0;
+}

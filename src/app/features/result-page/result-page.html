@@ -1,11 +1,27 @@
 @let elementSize = cards.length;
-@if(elementSize){
-<span>Sono stati trovati {{elementSize}} elementi</span>
-}@else{
+@if(!elementSize){
   <span>Non sono stati trovati elementi per la carta selezionata</span>
 }
-@for (card of cards; track card.id){
-<div>
-  <app-card-deatil [card]="card"/>
-</div>
+
+
+<!--@for (card of cards; track card.id){-->
+<!--<div>-->
+<!--  <app-card-deatil [card]="card"/>-->
+<!--</div>-->
+<!--}-->
+
+@for (card of paginatedCards; track card.id) {
+  <div>
+    <app-card-deatil [card]="card" />
+  </div>
 }
+
+<div class="pagination-controls">
+  <button mat-icon-button (click)="prevPage()" [disabled]="currentPage === 1">
+    <mat-icon>chevron_left</mat-icon>
+  </button>
+  <span>Pagina {{currentPage}} di {{totalPages}}</span>
+  <button mat-icon-button (click)="nextPage()" [disabled]="currentPage === totalPages">
+    <mat-icon>chevron_right</mat-icon>
+  </button>
+</div>

@@ -15,6 +15,8 @@ export type CardMarketplace = {
   on_vacation: boolean;
   user: User;
   price: CardPrice;
+
+  imageUrl?: string;
 }
 
 export type Expansion = {

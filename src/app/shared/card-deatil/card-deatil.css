@@ -3,5 +3,10 @@
 
   mat-card {
     padding-bottom: 1rem;
+
+    mat-card-footer {
+      top: 1rem;
+      margin-inline: 1rem;
+    }
   }
 }
