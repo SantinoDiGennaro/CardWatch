@@ -14,11 +14,11 @@
   </mat-form-field>
 
   <span>
-    <button mat-raised-button>
+    <button mat-raised-button (click)="searchCard()" [disabled]="isInvalid">
       Cerca
       <mat-icon>search</mat-icon>
     </button>
-    <button mat-raised-button (click)="setFavoriteCards()">
+    <button mat-raised-button (click)="setFavoriteCards()" [disabled]="isInvalid">
       Salva
       <mat-icon>star</mat-icon>
     </button>

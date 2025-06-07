@@ -1,0 +1,12 @@
+.cardCard {
+  margin: 2rem 0.5rem;
+
+  mat-card {
+    padding-bottom: 1rem;
+
+    mat-card-footer {
+      top: 1rem;
+      margin-inline: 1rem;
+    }
+  }
+}

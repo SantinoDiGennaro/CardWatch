@@ -1,0 +1,27 @@
+@if (!!card) {
+<div class="cardCard">
+  <mat-card appearance="outlined">
+    <mat-card-header>
+      <mat-card-title>{{card.name_en}}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image [src]="card.imageUrl" [alt]="card.name_en">
+    <mat-card-content>
+      <p>Rivenditore: {{card.user.username}}</p>
+      <p>Espansione: {{card.expansion.name_en}}</p>
+      <p>Prezzo: {{card.price.formatted}}</p>
+      <p>Condizioni: {{ statusDefinition(card.properties_hash.condition)}}</p>
+      <p>Quantità: {{card.quantity}}</p>
+    </mat-card-content>
+    <mat-card-footer>
+      <mat-chip-set>
+        @if(card.properties_hash.mtg_foil){
+          <mat-chip>Foil</mat-chip>
+        }
+        @if(card.graded){
+          <mat-chip>Gradata</mat-chip>
+        }
+      </mat-chip-set>
+    </mat-card-footer>
+  </mat-card>
+</div>
+}

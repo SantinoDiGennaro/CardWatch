@@ -1,0 +1,31 @@
+<h2 mat-dialog-title>Filtri</h2>
+<mat-dialog-content>
+
+  <mat-form-field>
+    <mat-label>Espansione</mat-label>
+    <mat-select [(ngModel)]="filters.selectedExpansion">
+      @for (expansion of expansions; track expansion) {
+        <mat-option [value]="expansion">{{expansion}}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Condizione</mat-label>
+    <mat-select [(ngModel)]="filters.selectedCondition">
+      @for (condition of conditions; track condition.code) {
+        <mat-option [value]="condition.code">{{condition.view}}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Prezzo massimo</mat-label>
+    <input type="number" matInput [(ngModel)]="filters.selectedPrice">
+  </mat-form-field>
+
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button matButton mat-dialog-close (click)="confirm()">Ok</button>
+  <button matButton [mat-dialog-close]="false">Chiudi</button>
+</mat-dialog-actions>
