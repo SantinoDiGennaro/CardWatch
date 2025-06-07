@@ -73,15 +73,16 @@ export class ResultPage {
 
     filterDialog.afterClosed().pipe(takeUntilDestroyed(this.#destroyRef)).subscribe({
       next: (res: Filter) => {
-        this.filters = res;
-        this.showedCards = [];
+        if (res) {
+          this.filters = res;
+          this.showedCards = [];
 
-        this.showedCards = this.cards.filter(el =>
-          (!res.selectedExpansion || el.expansion.name_en === res.selectedExpansion) &&
-          (!res.selectedCondition || el.properties_hash.condition === res.selectedCondition) &&
-          (!res.selectedPrice || (el.price_cents / 100) <= res.selectedPrice)
-        );
-
+          this.showedCards = this.cards.filter(el =>
+            (!res.selectedExpansion || el.expansion.name_en === res.selectedExpansion) &&
+            (!res.selectedCondition || el.properties_hash.condition === res.selectedCondition) &&
+            (!res.selectedPrice || (el.price_cents / 100) <= res.selectedPrice)
+          );
+        }
       }
     })
   }
