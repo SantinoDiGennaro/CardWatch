@@ -5,7 +5,7 @@ import {map} from 'rxjs/operators';
 import {CardGameId} from '../../models/enums/card-game-id.enum';
 import {CardBlueprint} from '../../models/types/card-blueprint.type';
 import {CardMarketplace} from '../../models/types/card-marketplace.type';
-import {BASE_MARKETPLACE_API, MARKETPLACE_TOKEN} from '../../../environment';
+import {BASE_MARKETPLACE_API, MARKETPLACE_TOKEN} from '../../environment';
 
 @Injectable({
   providedIn: 'root'

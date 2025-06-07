@@ -11,13 +11,22 @@ import {provideHttpClient} from '@angular/common/http';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatCardModule} from '@angular/material/card';
 import {MatChipsModule} from '@angular/material/chips';
-import { CardDeatil } from './shared/card-deatil/card-deatil';
+import {CardDeatil} from './shared/card-deatil/card-deatil';
+import {FilterModal} from './shared/filter-modal/filter-modal';
+import {
+  MAT_DIALOG_DEFAULT_OPTIONS,
+  MatDialogActions,
+  MatDialogClose,
+  MatDialogContent, MatDialogRef,
+  MatDialogTitle,
+} from '@angular/material/dialog';
+import {MatSelectModule} from '@angular/material/select';
 
 
 @NgModule({
@@ -26,7 +35,8 @@ import { CardDeatil } from './shared/card-deatil/card-deatil';
     SearchPage,
     Navbar,
     ResultPage,
-    CardDeatil
+    CardDeatil,
+    FilterModal
   ],
   imports: [
     BrowserModule,
@@ -39,11 +49,18 @@ import { CardDeatil } from './shared/card-deatil/card-deatil';
     MatButtonModule,
     MatToolbarModule,
     MatCardModule,
-    MatChipsModule
+    MatChipsModule,
+    MatDialogTitle,
+    MatDialogContent,
+    MatDialogActions,
+    MatDialogClose,
+    MatSelectModule,
+    FormsModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners(),
-    provideHttpClient()
+    provideHttpClient(),
+    {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}
   ],
   bootstrap: [App]
 })
