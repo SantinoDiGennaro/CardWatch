@@ -5,10 +5,10 @@ import {Filter} from '../../../models/types/filter.type';
 @Component({
   selector: 'app-filter-modal',
   standalone: false,
-  templateUrl: './filter-modal.html',
-  styleUrl: './filter-modal.css'
+  templateUrl: './filter-modal.component.html',
+  styleUrl: './filter-modal.component.css'
 })
-export class FilterModal {
+export class FilterModalComponent {
   data = inject(MAT_DIALOG_DATA);
   filters: Filter = this.data.filters;
   expansions = ['', ...this.data.expansions];
@@ -21,7 +21,7 @@ export class FilterModal {
     {code: 'Poor', view: 'In Cattive Condizioni'}
   ];
 
-  constructor(private dialogRef: MatDialogRef<FilterModal>) {
+  constructor(private dialogRef: MatDialogRef<FilterModalComponent>) {
   }
 
   confirm(): void {

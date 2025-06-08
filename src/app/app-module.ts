@@ -2,10 +2,10 @@ import {NgModule, provideBrowserGlobalErrorListeners} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 
 import {AppRoutingModule} from './app-routing-module';
-import {App} from './app';
-import {Navbar} from './shared/navbar/navbar';
-import {SearchPage} from './features/search-page/search-page';
-import {ResultPage} from './features/result-page/result-page';
+import {AppComponent} from './app.component';
+import {NavbarComponent} from './shared/navbar/navbar.component';
+import {SearchPageComponent} from './features/search-page/search-page.component';
+import {ResultPageComponent} from './features/result-page/result-page.component';
 import {provideHttpClient} from '@angular/common/http';
 
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
@@ -17,26 +17,28 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatCardModule} from '@angular/material/card';
 import {MatChipsModule} from '@angular/material/chips';
-import {CardDeatil} from './shared/card-deatil/card-deatil';
-import {FilterModal} from './shared/filter-modal/filter-modal';
+import {CardDeatilComponent} from './shared/card-deatil/card-deatil.component';
+import {FilterModalComponent} from './shared/filter-modal/filter-modal.component';
 import {
   MAT_DIALOG_DEFAULT_OPTIONS,
   MatDialogActions,
   MatDialogClose,
-  MatDialogContent, MatDialogRef,
+  MatDialogContent,
   MatDialogTitle,
 } from '@angular/material/dialog';
 import {MatSelectModule} from '@angular/material/select';
+import { FooterComponent } from './shared/footer/footer.component';
 
 
 @NgModule({
   declarations: [
-    App,
-    SearchPage,
-    Navbar,
-    ResultPage,
-    CardDeatil,
-    FilterModal
+    AppComponent,
+    SearchPageComponent,
+    NavbarComponent,
+    ResultPageComponent,
+    CardDeatilComponent,
+    FilterModalComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -62,7 +64,7 @@ import {MatSelectModule} from '@angular/material/select';
     provideHttpClient(),
     {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}
   ],
-  bootstrap: [App]
+  bootstrap: [AppComponent]
 })
 export class AppModule {
 }
