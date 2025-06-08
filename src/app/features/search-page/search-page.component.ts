@@ -9,10 +9,10 @@ import {Router} from '@angular/router';
 @Component({
   selector: 'app-search-page',
   standalone: false,
-  templateUrl: './search-page.html',
-  styleUrl: './search-page.css'
+  templateUrl: './search-page.component.html',
+  styleUrl: './search-page.component.css'
 })
-export class SearchPage {
+export class SearchPageComponent {
 
   readonly #scryfallService = inject(ScryfallService);
   readonly #storeService = inject(StoreService);

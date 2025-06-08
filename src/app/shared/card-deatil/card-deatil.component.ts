@@ -5,10 +5,10 @@ import {CardStatus} from '../../../models/types/card-status.type';
 @Component({
   selector: 'app-card-deatil',
   standalone: false,
-  templateUrl: './card-deatil.html',
-  styleUrl: './card-deatil.css'
+  templateUrl: './card-deatil.component.html',
+  styleUrl: './card-deatil.component.css'
 })
-export class CardDeatil {
+export class CardDeatilComponent {
   @Input() card: CardMarketplace | undefined;
 
   statusDefinition(status: CardStatus): string {

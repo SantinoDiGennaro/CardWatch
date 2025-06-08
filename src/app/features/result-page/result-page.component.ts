@@ -6,16 +6,16 @@ import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
 import {CardMarketplace} from '../../../models/types/card-marketplace.type';
 import {ScryfallService} from '../../../providers/services/scryfall.service';
 import {MatDialog} from '@angular/material/dialog';
-import {FilterModal} from '../../shared/filter-modal/filter-modal';
+import {FilterModalComponent} from '../../shared/filter-modal/filter-modal.component';
 import {Filter} from '../../../models/types/filter.type';
 
 @Component({
   selector: 'app-result-page',
   standalone: false,
-  templateUrl: './result-page.html',
-  styleUrl: './result-page.css'
+  templateUrl: './result-page.component.html',
+  styleUrl: './result-page.component.css'
 })
-export class ResultPage {
+export class ResultPageComponent {
   readonly #route = inject(ActivatedRoute);
   readonly #destroyRef = inject(DestroyRef);
   readonly #marketplaceService = inject(MarketplaceService);
@@ -64,7 +64,7 @@ export class ResultPage {
   }
 
   openFilterModal(): void {
-    const filterDialog = this.#dialog.open(FilterModal, {
+    const filterDialog = this.#dialog.open(FilterModalComponent, {
       data: {
         expansions: this.expansions,
         filters: this.filters

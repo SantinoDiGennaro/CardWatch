@@ -1,12 +1,12 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {SearchPage} from './features/search-page/search-page';
-import {ResultPage} from './features/result-page/result-page';
+import {SearchPageComponent} from './features/search-page/search-page.component';
+import {ResultPageComponent} from './features/result-page/result-page.component';
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'home'},
-  {path: 'home', component: SearchPage},
-  {path: 'cards/:cardName', component: ResultPage},
+  {path: 'home', component: SearchPageComponent},
+  {path: 'cards/:cardName', component: ResultPageComponent},
 ];
 
 @NgModule({
