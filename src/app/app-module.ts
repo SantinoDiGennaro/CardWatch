@@ -6,6 +6,8 @@ import {AppComponent} from './app.component';
 import {NavbarComponent} from './shared/navbar/navbar.component';
 import {SearchPageComponent} from './features/search-page/search-page.component';
 import {ResultPageComponent} from './features/result-page/result-page.component';
+import { FooterComponent } from './shared/footer/footer.component';
+
 import {provideHttpClient} from '@angular/common/http';
 
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
@@ -27,7 +29,8 @@ import {
   MatDialogTitle,
 } from '@angular/material/dialog';
 import {MatSelectModule} from '@angular/material/select';
-import { FooterComponent } from './shared/footer/footer.component';
+
+import { IonicModule } from '@ionic/angular';
 
 
 @NgModule({
@@ -42,6 +45,7 @@ import { FooterComponent } from './shared/footer/footer.component';
   ],
   imports: [
     BrowserModule,
+    IonicModule.forRoot(),
     AppRoutingModule,
     MatAutocompleteModule,
     MatInputModule,

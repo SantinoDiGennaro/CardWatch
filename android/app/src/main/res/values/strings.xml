@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">CardWatch</string>
+    <string name="title_activity_main">CardWatch</string>
+    <string name="package_name">com.sonny.cardwatch</string>
+    <string name="custom_url_scheme">com.sonny.cardwatch</string>
+</resources>
