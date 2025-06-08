@@ -23,10 +23,11 @@ import {
   MAT_DIALOG_DEFAULT_OPTIONS,
   MatDialogActions,
   MatDialogClose,
-  MatDialogContent, MatDialogRef,
+  MatDialogContent,
   MatDialogTitle,
 } from '@angular/material/dialog';
 import {MatSelectModule} from '@angular/material/select';
+import { Footer } from './shared/footer/footer';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import {MatSelectModule} from '@angular/material/select';
     Navbar,
     ResultPage,
     CardDeatil,
-    FilterModal
+    FilterModal,
+    Footer
   ],
   imports: [
     BrowserModule,

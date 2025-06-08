@@ -4,7 +4,8 @@ import {SearchPage} from './features/search-page/search-page';
 import {ResultPage} from './features/result-page/result-page';
 
 const routes: Routes = [
-  {path: '', component: SearchPage},
+  {path: '', pathMatch: 'full', redirectTo: 'home'},
+  {path: 'home', component: SearchPage},
   {path: 'cards/:cardName', component: ResultPage},
 ];
 

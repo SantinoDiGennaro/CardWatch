@@ -2,4 +2,17 @@
 body {
   margin: 0;
   background-color: slategray;
+  height: 100dvh;
+}
+
+
+
+.mat-toolbar {
+  background: var(--primary-color) !important;
+  color: var(--secondary-color) !important;
+}
+
+.mat-mdc-raised-button:not(:disabled) {
+  background-color: var(--primary-color) !important;
+  color: var(--secondary-color) !important;
 }
