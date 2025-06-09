@@ -6,7 +6,9 @@ import {AppComponent} from './app.component';
 import {NavbarComponent} from './shared/navbar/navbar.component';
 import {SearchPageComponent} from './features/search-page/search-page.component';
 import {ResultPageComponent} from './features/result-page/result-page.component';
-import { FooterComponent } from './shared/footer/footer.component';
+import {FooterComponent} from './shared/footer/footer.component';
+import {CardTableComponent} from './shared/card-table/card-table.component';
+
 
 import {provideHttpClient} from '@angular/common/http';
 
@@ -29,8 +31,11 @@ import {
   MatDialogTitle,
 } from '@angular/material/dialog';
 import {MatSelectModule} from '@angular/material/select';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
-import { IonicModule } from '@ionic/angular';
+import {IonicModule} from '@ionic/angular';
+import {StatusDefinitionPipe} from '../providers/pipes/status-definition.pipe';
 
 
 @NgModule({
@@ -41,7 +46,9 @@ import { IonicModule } from '@ionic/angular';
     ResultPageComponent,
     CardDeatilComponent,
     FilterModalComponent,
-    FooterComponent
+    FooterComponent,
+    CardTableComponent,
+    StatusDefinitionPipe
   ],
   imports: [
     BrowserModule,
@@ -61,7 +68,9 @@ import { IonicModule } from '@ionic/angular';
     MatDialogActions,
     MatDialogClose,
     MatSelectModule,
-    FormsModule
+    FormsModule,
+    MatTableModule,
+    MatPaginatorModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners(),

@@ -1,24 +1,30 @@
 @let elementSize = cards.length;
 @if(!elementSize){
   <span>Non sono stati trovati elementi per la carta selezionata</span>
+} @else {
+  <app-card-table [cards]="cards"/>
 }
 
-@for (card of paginatedCards; track card.id) {
-  <div>
-    <app-card-deatil [card]="card" />
-  </div>
-}
 
-<div class="pagination-controls">
-  <button mat-icon-button (click)="prevPage()" [disabled]="currentPage === 1">
-    <mat-icon>chevron_left</mat-icon>
-  </button>
-  <span>Pagina {{currentPage}} di {{totalPages}}</span>
-  <button mat-icon-button (click)="nextPage()" [disabled]="currentPage === totalPages">
-    <mat-icon>chevron_right</mat-icon>
-  </button>
 
-  <button mat-icon-button (click)="openFilterModal()">
-    <mat-icon>filter_alt</mat-icon>
-  </button>
-</div>
+
+
+<!--@for (card of paginatedCards; track card.id) {-->
+<!--  <div>-->
+<!--    <app-card-deatil [card]="card" />-->
+<!--  </div>-->
+<!--}-->
+
+<!--<div class="pagination-controls">-->
+<!--  <button mat-icon-button (click)="prevPage()" [disabled]="currentPage === 1">-->
+<!--    <mat-icon>chevron_left</mat-icon>-->
+<!--  </button>-->
+<!--  <span>Pagina {{currentPage}} di {{totalPages}}</span>-->
+<!--  <button mat-icon-button (click)="nextPage()" [disabled]="currentPage === totalPages">-->
+<!--    <mat-icon>chevron_right</mat-icon>-->
+<!--  </button>-->
+
+<!--  <button mat-icon-button (click)="openFilterModal()">-->
+<!--    <mat-icon>filter_alt</mat-icon>-->
+<!--  </button>-->
+<!--</div>-->

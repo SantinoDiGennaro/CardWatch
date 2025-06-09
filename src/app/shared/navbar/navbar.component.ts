@@ -9,6 +9,8 @@ import {Router} from '@angular/router';
 })
 export class NavbarComponent {
   readonly #route = inject(Router);
+  readonly version = '0.0.2';
+
 
   navigateTo(route: string): void {
     this.#route.navigate([route]);
