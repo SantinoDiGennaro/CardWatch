@@ -1,12 +1,16 @@
-import {Component, Input} from '@angular/core';
-import {CardMarketplace} from '../../../models/types/card-marketplace.type';
-import {CardStatus} from '../../../models/types/card-status.type';
+import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { MatCardModule } from '@angular/material/card';
+import { MatChipsModule } from '@angular/material/chips';
+import { CardMarketplace } from '../../../models/types/card-marketplace.type';
+import { CardStatus } from '../../../models/types/card-status.type';
 
 @Component({
   selector: 'app-card-deatil',
-  standalone: false,
+  standalone: true,
+  imports: [CommonModule, MatCardModule, MatChipsModule],
   templateUrl: './card-deatil.component.html',
-  styleUrl: './card-deatil.component.css'
+  styleUrls: ['./card-deatil.component.css']
 })
 export class CardDeatilComponent {
   @Input() card: CardMarketplace | undefined;
@@ -24,7 +28,7 @@ export class CardDeatilComponent {
       case 'Poor':
         return 'In Cattive Condizioni';
       default:
-          return '';
+        return '';
     }
   }
 }

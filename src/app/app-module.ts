@@ -8,7 +8,8 @@ import {SearchPageComponent} from './features/search-page/search-page.component'
 import {ResultPageComponent} from './features/result-page/result-page.component';
 import {FooterComponent} from './shared/footer/footer.component';
 import {CardTableComponent} from './shared/card-table/card-table.component';
-
+import {BubbleNavbarComponent} from './shared/bubble-navbar/bubble-navbar.component';
+import {CardListComponent} from './features/card-list/card-list.component';
 
 import {provideHttpClient} from '@angular/common/http';
 
@@ -44,11 +45,11 @@ import {StatusDefinitionPipe} from '../providers/pipes/status-definition.pipe';
     SearchPageComponent,
     NavbarComponent,
     ResultPageComponent,
-    CardDeatilComponent,
     FilterModalComponent,
     FooterComponent,
     CardTableComponent,
-    StatusDefinitionPipe
+    StatusDefinitionPipe,
+
   ],
   imports: [
     BrowserModule,
@@ -70,7 +71,11 @@ import {StatusDefinitionPipe} from '../providers/pipes/status-definition.pipe';
     MatSelectModule,
     FormsModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    BubbleNavbarComponent,
+    CardListComponent,
+    CardDeatilComponent,
+
   ],
   providers: [
     provideBrowserGlobalErrorListeners(),
