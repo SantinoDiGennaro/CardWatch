@@ -1,6 +1,12 @@
 @if (dataSource) {
+
   <div class="tableContainer">
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+      <ng-container matColumnDef="cardName">
+        <th mat-header-cell *matHeaderCellDef> Carta</th>
+        <td mat-cell *matCellDef="let element"> {{ element.name_en }}</td>
+      </ng-container>
 
       <ng-container matColumnDef="reseller">
         <th mat-header-cell *matHeaderCellDef> Rivenditore</th>
@@ -9,7 +15,7 @@
 
       <ng-container matColumnDef="price">
         <th mat-header-cell *matHeaderCellDef> Prezzo</th>
-        <td mat-cell *matCellDef="let element"> {{ (element.price_cents/100) | currency: 'EUR' }}</td>
+        <td mat-cell *matCellDef="let element"> {{ (element.price_cents / 100) | currency: 'EUR' }}</td>
       </ng-container>
 
       <ng-container matColumnDef="expansion">
@@ -26,13 +32,13 @@
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
   </div>
-      <mat-paginator #paginator
-                     [length]="cards.length"
-                     [pageSize]="5"
-                     [pageSizeOptions]="[5, 10, 25, 100]"
-                     [showFirstLastButtons]="true"
-                     aria-label="Select page">
-      </mat-paginator>
+  <mat-paginator #paginator
+                 [length]="dataSource.data.length"
+                 [pageSize]="10"
+                 [pageSizeOptions]="[5, 10, 25, 100]"
+                 [showFirstLastButtons]="true"
+                 aria-label="Select page">
+  </mat-paginator>
 
 }
 

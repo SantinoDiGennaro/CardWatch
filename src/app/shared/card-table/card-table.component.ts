@@ -10,32 +10,29 @@ import {MatPaginator} from '@angular/material/paginator';
   styleUrl: './card-table.component.css'
 })
 export class CardTableComponent implements OnInit, OnChanges, AfterViewInit {
-  displayedColumns: Array<string> = ['reseller', 'price', 'expansion', 'condition'];
   @Input() cards: Array<CardMarketplace> = [];
-  dataSource: MatTableDataSource<CardMarketplace> | null = null;
+  @Input() showCardName: boolean = false;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
+  displayedColumns: Array<string> = ['reseller', 'price', 'expansion', 'condition'];
+  dataSource: MatTableDataSource<CardMarketplace> = new MatTableDataSource<CardMarketplace>([]);
 
   ngOnInit(): void {
-    this.dataSource = new MatTableDataSource<CardMarketplace>(this.cards);
+    if (this.showCardName) {
+      this.displayedColumns.unshift('cardName');
+    }
   }
 
   ngAfterViewInit(): void {
-    if (this.dataSource && this.paginator) {
-      this.dataSource.paginator = this.paginator;
-    }
+    this.dataSource.paginator = this.paginator;
   }
 
   ngOnChanges(): void {
-    if (this.dataSource) {
-      this.dataSource.data = this.cards;
-    } else {
-      this.dataSource = new MatTableDataSource<CardMarketplace>(this.cards);
+    this.dataSource = new MatTableDataSource(this.cards);
+
+    if (this.paginator) {
+      this.paginator._changePageSize(this.paginator.pageSize);
+      this.paginator.firstPage();
     }
-
-
-    if (this.paginator && this.dataSource) {
-      this.dataSource.paginator = this.paginator;
-    }
-
   }
+
 }

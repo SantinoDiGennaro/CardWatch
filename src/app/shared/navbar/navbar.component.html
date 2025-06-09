@@ -1,8 +1,11 @@
 <mat-toolbar>
 
-  <button matIconButton (click)="navigateTo('home')">
-    <mat-icon>home</mat-icon>
-  </button>
+  <button mat-button [matMenuTriggerFor]="menu" > <mat-icon>menu</mat-icon> </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="navigateTo('home')"><mat-icon>home</mat-icon> Home</button>
+    <button mat-menu-item (click)="navigateTo('favorite')"><mat-icon>favorite</mat-icon> Preferiti</button>
+  </mat-menu>
+
   <span>Card Watch</span>
 
 

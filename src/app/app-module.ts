@@ -8,7 +8,7 @@ import {SearchPageComponent} from './features/search-page/search-page.component'
 import {ResultPageComponent} from './features/result-page/result-page.component';
 import {FooterComponent} from './shared/footer/footer.component';
 import {CardTableComponent} from './shared/card-table/card-table.component';
-
+import { FavoritePageComponent } from './features/favorite-page/favorite-page.component';
 
 import {provideHttpClient} from '@angular/common/http';
 
@@ -33,6 +33,7 @@ import {
 import {MatSelectModule} from '@angular/material/select';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatMenuModule} from '@angular/material/menu';
 
 import {IonicModule} from '@ionic/angular';
 import {StatusDefinitionPipe} from '../providers/pipes/status-definition.pipe';
@@ -48,7 +49,8 @@ import {StatusDefinitionPipe} from '../providers/pipes/status-definition.pipe';
     FilterModalComponent,
     FooterComponent,
     CardTableComponent,
-    StatusDefinitionPipe
+    StatusDefinitionPipe,
+    FavoritePageComponent
   ],
   imports: [
     BrowserModule,
@@ -70,7 +72,8 @@ import {StatusDefinitionPipe} from '../providers/pipes/status-definition.pipe';
     MatSelectModule,
     FormsModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatMenuModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners(),

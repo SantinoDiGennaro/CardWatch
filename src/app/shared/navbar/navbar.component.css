@@ -3,9 +3,30 @@ mat-toolbar {
   top: 0;
   z-index: 10;
 
+  .mat-mdc-menu-trigger {
+    color: var(--secondary-color);
+  }
+
   .version {
     font-size: smaller;
     margin-top: 5px;
     margin-left: auto;
   }
 }
+
+.mat-mdc-menu-content {
+  background-color: var(--primary-color);
+
+  margin: 0;
+  padding: 8px 0;
+  outline: 0;
+}
+
+.mat-mdc-menu-item {
+  color: var(--secondary-color);
+
+  mat-icon {
+    color: var(--secondary-color);
+  }
+}
+
