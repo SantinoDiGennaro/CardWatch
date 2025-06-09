@@ -1,0 +1,14 @@
+@for(card of favoriteCards;track card){
+  <div>{{card}}</div>
+}
+
+
+@let elementSize = cards.length;
+@if(!elementSize){
+  <span>Non sono stati trovati elementi per la carta selezionata</span>
+} @else {
+  <button mat-icon-button (click)="openFilterModal()">
+    <mat-icon>filter_alt</mat-icon>
+  </button>
+  <app-card-table [cards]="showedCards" [showCardName]="true"/>
+}
