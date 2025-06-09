@@ -28,9 +28,9 @@ export class CardsService {
             mergeMap((blueprint: CardBlueprint) =>
               this.#marketplaceService.getMarketCard(blueprint.id).pipe(
                 // Aggiungi le immagini a ogni card
-                switchMap((cardsMarketplace: CardMarketplace[]) =>
-                  this.addImagesToCards(cardsMarketplace)
-                ),
+                // switchMap((cardsMarketplace: CardMarketplace[]) =>
+                //   this.addImagesToCards(cardsMarketplace)
+                // ),
                 // Estrai le espansioni uniche
                 tap((cardsMarketplace: CardMarketplace[]) => {
                   this.extractUniqueExpansions(cardsMarketplace);
