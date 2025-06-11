@@ -7,6 +7,7 @@ import {switchMap, mergeMap, map, tap, catchError} from 'rxjs/operators';
 import {from, Observable, of, forkJoin, BehaviorSubject} from 'rxjs';
 import {CardBlueprint} from '../../models/types/card-blueprint.type';
 import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
+import {HttpClient} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +16,8 @@ export class CardsService {
   readonly #marketplaceService = inject(MarketplaceService);
   readonly #scryfallService = inject(ScryfallService);
   readonly #destroyRef = inject(DestroyRef);
+
+  readonly #httpClient = inject(HttpClient);
 
   expansions: BehaviorSubject<Array<string>> = new BehaviorSubject<Array<string>>([]);
 
@@ -62,5 +65,12 @@ export class CardsService {
       if (!this.expansions.getValue().includes(expansion))
         this.expansions.value.push(newExpansions[0]);
     })
+  }
+
+  test(): Observable<string> {
+    return this.#httpClient.get<string>('https://api.waifu.im/search?included_tags=raiden-shogun&included_tags=maid&height=>=2000')
+      .pipe(
+      map((response: any) => response.images[0].url)
+    );
   }
 }

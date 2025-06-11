@@ -1,5 +1,6 @@
 import {Component, inject} from '@angular/core';
 import {Router} from '@angular/router';
+import {VERSION} from '../../../environment';
 
 @Component({
   selector: 'app-navbar',
@@ -9,7 +10,7 @@ import {Router} from '@angular/router';
 })
 export class NavbarComponent {
   readonly #route = inject(Router);
-  readonly version = '0.0.2';
+  readonly version = VERSION;
 
 
   navigateTo(route: string): void {

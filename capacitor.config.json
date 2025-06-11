@@ -1,0 +1,9 @@
+
+{
+  "appId": "com.sonny.cardwatch",
+  "appName": "CardWatch",
+  "webDir": "dist/CardWatch/browser",
+  "server": {
+    "androidScheme": "https"
+  }
+}
